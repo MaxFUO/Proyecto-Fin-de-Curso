@@ -17,3 +17,6 @@ class GestionAsignatura():
             return True
         else:
             return False
+
+    def editar_asignatura(self, nombreAsignatura):
+        pass
