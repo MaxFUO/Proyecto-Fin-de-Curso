@@ -19,6 +19,7 @@ class GestionAsignatura():
             return False
 
     def editar_asignatura(self, nombreAsignatura):
+<<<<<<< HEAD
         busqueda = session.query(Asignatura).filter(Asignatura.nombreAsignatura == nombreAsignatura).all()
         if len(busqueda) == 0:
             asignatura = session.query(Asignatura).filter(asignatura.nombreAsignatura == nombreAsignatura).first()
@@ -27,3 +28,6 @@ class GestionAsignatura():
             return True
         else:
             return False
+=======
+        pass
+>>>>>>> 8a05cbc57e2c3ab5018c19e8944257196ef14304
