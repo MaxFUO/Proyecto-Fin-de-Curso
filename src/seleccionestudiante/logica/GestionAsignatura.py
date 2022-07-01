@@ -21,7 +21,7 @@ class GestionAsignatura():
     def editar_asignatura(self, nombreAsignatura):
         busqueda = session.query(Asignatura).filter(Asignatura.nombreAsignatura == nombreAsignatura).all()
         if len(busqueda) == 0:
-            asignatura = session.query(Asignatura).filter(asignatura.nombreAsignatura == nombreAsignatura).first()
+            asignatura = session.query(Asignatura).filter(Asignatura.nombreAsignatura == nombreAsignatura).first()
             asignatura.nombreAsignatura = nombreAsignatura
             session.commit()
             return True
