@@ -24,7 +24,7 @@ class GestionAsignatura():
             asignatura = session.query(Asignatura).filter(Asignatura.idAsignatura == asignatura_id).first()
             asignatura.nombreAsignatura = nombreAsignatura
             session.commit()
-            return False
-        else:
             return True
+        else:
+            return False
         pass
