@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>276</width>
-    <height>215</height>
+    <height>148</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,10 +23,10 @@
     </rect>
    </property>
    <property name="text">
-    <string>Asignatura                :</string>
+    <string>ID Asignatura                :</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEditAsignatura">
+  <widget class="QLineEdit" name="linebuscarAsignatura">
    <property name="geometry">
     <rect>
      <x>140</x>
@@ -59,34 +59,11 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="lbNombreDocente">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>100</y>
-     <width>111</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Nombre del Docente :</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEditNombreDocente">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>100</y>
-     <width>113</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QPushButton" name="btnGuardar">
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>160</y>
+     <y>110</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -99,7 +76,7 @@
    <property name="geometry">
     <rect>
      <x>150</x>
-     <y>160</y>
+     <y>110</y>
      <width>75</width>
      <height>23</height>
     </rect>
