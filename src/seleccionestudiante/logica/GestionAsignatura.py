@@ -18,13 +18,13 @@ class GestionAsignatura():
         else:
             return False
 
-    def editar_asignatura(self, nombreAsignatura):
-        busqueda = session.query(Asignatura).filter(Asignatura.nombreAsignatura == nombreAsignatura).all()
+    def editar_asignatura(self,asignatura_id, nombreAsignatura):
+        busqueda = session.query(Asignatura).filter(Asignatura.nombreAsignatura == nombreAsignatura, Asignatura.idAsignatura != asignatura_id).all()
         if len(busqueda) == 0:
-            asignatura = session.query(Asignatura).filter(Asignatura.nombreAsignatura == nombreAsignatura).first()
+            asignatura = session.query(Asignatura).filter(Asignatura.idAsignatura == asignatura_id).first()
             asignatura.nombreAsignatura = nombreAsignatura
             session.commit()
-            return True
-        else:
             return False
+        else:
+            return True
         pass

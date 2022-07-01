@@ -120,3 +120,7 @@ class AsignaturaTestCase ( unittest.TestCase ) :
 
         self.assertEqual(resultado, True)
         self.assertEqual(asignatura.nombreAsignatura, "Pruebas de software")
+
+    def test_editar_asignatura ( self ) :
+        resultado = self.gestionAsignatura.editar_asignatura (asignatura_id = 1, nombreAsignatura = "Estructura de datos")
+        self.assertTrue(resultado)

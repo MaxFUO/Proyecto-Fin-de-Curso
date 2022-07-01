@@ -5,7 +5,7 @@ from .declarative_base import Base
 
 class Asignatura(Base):
     __tablename__="asignatura"
-    idAsignatura=Column(Integer,primary_key = True)
+    idAsignatura = Column(Integer,primary_key = True)
     nombreAsignatura = Column ( String )
     estudiantes = relationship ( 'Estudiante' , secondary = 'asignatura_estudiante' )
 
