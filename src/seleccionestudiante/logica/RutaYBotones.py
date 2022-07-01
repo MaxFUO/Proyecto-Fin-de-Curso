@@ -4,6 +4,13 @@ import os
 from PyQt6.QtWidgets import QApplication, QDialog
 from PyQt6 import uic
 from tkinter import messagebox
+from datetime import datetime
+from src.seleccionestudiante.modelo.Asignatura import Asignatura
+from src.seleccionestudiante.modelo.Estudiante import Estudiante
+from src.seleccionestudiante.modelo.Equipo import Equipo
+from src.seleccionestudiante.modelo.Actividad import Actividad
+from src.seleccionestudiante.logica.GestionAsignatura import GestionAsignatura
+from src.seleccionestudiante.modelo.declarative_base import Session
 
 
 class Dialogo(QDialog):
@@ -22,21 +29,23 @@ class Dialogo(QDialog):
         self.btnCancelar.clicked.connect(self.exit_app)
 
     def EditarAsignatura(self):
-        NuevoNombreAsignatura = self.lineEditAsignatura.text()
-        if(NuevoNombreAsignatura == nombreAsignatura):
-            resultado = messagebox.askquestion("Quiere cambiar el nombre de l asignatura", "¿Está seguro que desea cambiar el nombre?")
-            if resultado == "yes":
-                nombreAsignatura = NuevoNombreAsignatura
-            if resultado == "no":
+        resultado = messagebox.askquestion("Quiere cambiar el nombre de la asignatura",
+                                           "¿Está seguro que desea cambiar el nombre?")
+        if resultado == "yes":
+            IDAsignatura = self.lineEditAsignatura.text()
+            NuevoNombreAsignatura = self.lineEditAsignaturaNuevo.text()
+            resul = self.gestionAsignatura.editar_asignatura(asignatura_id = IDAsignatura, nombreAsignatura = NuevoNombreAsignatura)
+            if resul == False:
                 messagebox.showinfo('Mensaje Informativo', 'No se edito la asignatura')
-                nombreAsignatura = nombreAsignatura
-
+            elif resul == True:
+                messagebox.showinfo('Mensaje Informativo', 'Se edito la asignatura')
+        if resultado == "no":
+            messagebox.showinfo('Mensaje Informativo', 'No se edito la asignatura')
 
 
     def exit_app(self): #Si se presiona el boton cancelar la aplicacion mostrara un mensaje Salir
         resultado = messagebox.askquestion("Salir", "¿Está seguro que desea salir?")
         if resultado == "yes":
-            # exit(0)
             quit(0)
 
 
