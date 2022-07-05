@@ -6,9 +6,6 @@ from PyQt6 import uic
 from tkinter import messagebox
 from datetime import datetime
 from src.seleccionestudiante.modelo.Asignatura import Asignatura
-from src.seleccionestudiante.modelo.Estudiante import Estudiante
-from src.seleccionestudiante.modelo.Equipo import Equipo
-from src.seleccionestudiante.modelo.Actividad import Actividad
 from src.seleccionestudiante.logica.GestionAsignatura import GestionAsignatura
 from src.seleccionestudiante.modelo.declarative_base import Session
 
@@ -32,9 +29,9 @@ class Dialogo(QDialog):
         resultado = messagebox.askquestion("Quiere cambiar el nombre de la asignatura",
                                            "¿Está seguro que desea cambiar el nombre?")
         if resultado == "yes":
-            IDAsignatura = self.lineEditAsignatura.text()
+            IDAsignatura = self.linebuscarAsignatura.text()
             NuevoNombreAsignatura = self.lineEditAsignaturaNuevo.text()
-            resul = self.gestionAsignatura.editar_asignatura(asignatura_id = IDAsignatura, nombreAsignatura = NuevoNombreAsignatura)
+            resul = self.gestionAsignatura.editar_asignatura (asignatura_id = IDAsignatura, nombreAsignatura = NuevoNombreAsignatura)
             if resul == False:
                 messagebox.showinfo('Mensaje Informativo', 'No se edito la asignatura')
             elif resul == True:
