@@ -2,6 +2,7 @@
 ## Módulo SeleccionEstudiante
 ## Descripción
 El modúlo tiene como objetivo seleccionar un grupo o estudinate de un grupo.
+
 Apellidos y nombres | Rol | % de trabajo
 ------------------- | --- | ------------
 Grande Contreras Mario Jarod | Scrum Master |  100%

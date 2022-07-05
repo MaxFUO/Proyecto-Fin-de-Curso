@@ -113,13 +113,13 @@ class AsignaturaTestCase ( unittest.TestCase ) :
 
     def test_verificar_almacenamiento_agregar_asignatura(self):
         '''Verifica que al almacenar los datos queden guardados en el almacenamiento'''
-        resultado = self.gestionAsignatura.agregar_asignatura(nombreAsignatura="Pruebas de software")
+        resultado = self.gestionAsignatura.agregar_asignatura(nombreAsignatura="Redes de Computadores")
 
         self.session = Session()
-        asignatura = self.session.query(Asignatura).filter(Asignatura.nombreAsignatura == "Pruebas de software").first()
+        asignatura = self.session.query(Asignatura).filter(Asignatura.nombreAsignatura == "Redes de Computadores").first()
 
         self.assertEqual(resultado, True)
-        self.assertEqual(asignatura.nombreAsignatura, "Pruebas de software")
+        self.assertEqual(asignatura.nombreAsignatura, "Redes de Computadores")
 
     def test_editar_asignatura ( self ) :
         resultado = self.gestionAsignatura.editar_asignatura (asignatura_id = 1, nombreAsignatura = "Estructura de datos")
